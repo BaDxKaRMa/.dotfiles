@@ -79,29 +79,50 @@ These will improve the user experience but aren't required:
 <a name="dotfiles"></a>
 ## Dotfiles
 I've turned away from symlinking everything because that was going to get unwieldy. Instead, I'm using a bare repo. These are the steps to build it.  
+
 First, we create a bare repo in a new folder named `.dotfiles`.
+
 ```
 mkdir $HOME/.dotfiles
 git init --bare $HOME/.dotfiles
 ```  
+
 Next, I added an alias to my `config.fish` file that I use for this repo. This is the special sauce of this setup.
+
 ```
 alias dot='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 ```
 
 Next, don't show untracked files (because that would be a lot) and add the remote. 
+
 ```
 dotfiles config --local status.showUntrackedFiles no
 dotfiles remote add origin git@github.com:BaDxKaRMa/.dotfiles.git
 ```
 
 Now, you can use the alias to add any file to wish to start syncing. Commit and push to see the results in your GitHub Repo.
+
 ```
 cd $HOME
 dot add .vimrc
 dot commit -m "Add .vimrc"
 dot push
+```
+
+### Restoring Dotfiles
+To setup a new machine all you need to do is clone the repo using a bare repo. 
+
+```
+git clone --separate-git-dir=$HOME/.dotfiles git@github.com:BaDxKaRMa/.dotfiles.git ~
+```
+
+However, some programs create default config files, so this might fail if git finds an existing config file in your $HOME. In that case, a simple solution is to clone to a temporary directory, and then delete it once you are done.
+
+```
+git clone --separate-git-dir=$HOME/.dotfiles git@github.com:BaDxKaRMa/.dotfiles.git tmpdotfiles
+rsync --recursive --verbose --exclude '.git' tmpdotfiles/ $HOME/
+rm -r tmpdotfiles
 ```
 
 <a name="folderStructure"></a>
