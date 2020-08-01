@@ -11,11 +11,12 @@
 2. [Features](#features)
 3. [Dependencies](#dependencies)
 4. [Installation](#installation)
-5. [Folder Structure](#folderStructure)
-6. [My Preferred Applications](#applications)
-7. [Application Theming](#appTheming)
-8. [Keybinds](#keybinds)
-9. [Notes](#notes)
+5. [Dotfiles](#dotfiles)
+6. [Folder Structure](#folderStructure)
+7. [My Preferred Applications](#applications)
+8. [Application Theming](#appTheming)
+9. [Keybinds](#keybinds)
+10. [Notes](#notes)
 
 <a name="details"></a>
 ## Details ##
@@ -74,6 +75,34 @@ These will improve the user experience but aren't required:
 3. navigate to the `awesome/wallpaper` folder and place your desired wallpaper there, ensuring that it is named `wallpaper`. One  awesome (pun intended) feature of my config is that the filetype of the wallpaper can be any image filetype and it will automatically recognize it. Remember to delete the `blurredWallpaper` file in order to make the blurring script recognize a new wallpaper has been added and needs to be blurred 
 4. edit the `apps.lua` file to define your desired default and startup applications
 5. optional: edit the `keys.lua` file to change / add keybinds
+
+<a name="dotfiles"></a>
+## Dotfiles
+I've turned away from symlinking everything because that was going to get unwieldy. Instead, I'm using a bare repo. These are the steps to build it.  
+First, we create a bare repo in a new folder named `.dotfiles`.
+```
+mkdir $HOME/.dotfiles
+git init --bare $HOME/.dotfiles
+```  
+Next, I added an alias to my `config.fish` file that I use for this repo. This is the special sauce of this setup.
+```
+alias dot='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+```
+
+Next, don't show untracked files (because that would be a lot) and add the remote. 
+```
+dotfiles config --local status.showUntrackedFiles no
+dotfiles remote add origin git@github.com:BaDxKaRMa/.dotfiles.git
+```
+
+Now, you can use the alias to add any file to wish to start syncing. Commit and push to see the results in your GitHub Repo.
+```
+cd $HOME
+dot add .vimrc
+dot commit -m "Add .vimrc"
+dot push
+```
 
 <a name="folderStructure"></a>
 ## Awesome Folder File Structure ##
