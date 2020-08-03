@@ -97,8 +97,8 @@ alias dot='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 Next, don't show untracked files (because that would be a lot) and add the remote. 
 
 ```
-dotfiles config --local status.showUntrackedFiles no
-dotfiles remote add origin git@github.com:BaDxKaRMa/.dotfiles.git
+dot config --local status.showUntrackedFiles no
+dot remote add origin git@github.com:BaDxKaRMa/.dotfiles.git
 ```
 
 Now, you can use the alias to add any file to wish to start syncing. Commit and push to see the results in your GitHub Repo.
