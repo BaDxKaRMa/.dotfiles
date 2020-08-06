@@ -21,13 +21,13 @@ scrolling:
   history: 10000
 font:
   normal:
-    family: Droid Sans Mono Dotted for Powerline
-    style: Regular
+    family: Hack Nerd Font
+    style: Regluar
   bold:
-    family: Droid Sans Mono Dotted for Powerline 
+    family: Hack Nerd Font 
     style: Bold
   italic:
-    family: Droid Sans Mono Dotted for Powerline
+    family: Hack Nerd Font 
     style: Italic
   size: 12.0
 
