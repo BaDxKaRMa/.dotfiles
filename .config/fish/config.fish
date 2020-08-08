@@ -10,6 +10,7 @@ switch (uname)
         eval (dircolors -c ~/.dircolors/my.colors)
         alias "ls=ls --color=auto --group-directories-first"
         alias p="sudo pacman"
+        alias pp="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
         if status --is-interactive
                keychain --eval --quiet -Q id_rsa | source
            end
@@ -32,4 +33,4 @@ function fssh -d "Fuzzy-find ssh host via ag and ssh into it"
   ag --ignore-case '^host [^*]' ~/.ssh/config | cut -d ' ' -f 2 | fzf | read -l result; and ssh "$result"
   end
 
-export FZF_DEFAULT_OPTS='-e -m --layout=reverse --bind ctrl-a:select-all+accept'
+export FZF_DEFAULT_OPTS='-e --multi --height 50% --layout=reverse --bind ctrl-a:select-all+accept'
