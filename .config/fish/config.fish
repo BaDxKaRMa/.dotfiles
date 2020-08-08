@@ -33,4 +33,7 @@ function fssh -d "Fuzzy-find ssh host via ag and ssh into it"
   ag --ignore-case '^host [^*]' ~/.ssh/config | cut -d ' ' -f 2 | fzf | read -l result; and ssh "$result"
   end
 
-export FZF_DEFAULT_OPTS='-e --multi --height 75% --border --layout=reverse --bind ctrl-a:select-all+accept'
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g .'
+export FZF_DEFAULT_OPTS='-e --multi --cycle --height 75% --border --layout=reverse --bind ctrl-a:select-all+accept'
+export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git --exclude node_modules'
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -100'"
