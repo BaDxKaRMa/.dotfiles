@@ -5,7 +5,7 @@ set -g theme_date_format "+%Y-%m-%d %H:%M"
 
 switch (uname)
     case Darwin
-        alias "ls=ls -G"
+        #MAC
     case Linux
         eval (dircolors -c ~/.dircolors/my.colors)
         alias "ls=ls --color=auto --group-directories-first"
