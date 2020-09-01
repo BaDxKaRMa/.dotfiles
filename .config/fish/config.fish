@@ -23,7 +23,7 @@ alias slog="script -a ~/logs/Terminal_Logging/(date +"%Y_%m_%d_%I_%M_%p").log"
 alias play="asciinema play ~/logs/(ls logs/ | fzf -q '.cast ')"
 alias grep="grep -i"
 alias dot='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias ls='lsd'
+alias ls='lsd --group-dirs first'
 alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
