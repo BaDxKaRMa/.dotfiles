@@ -20,7 +20,7 @@ switch (uname)
 alias sshhosts="grep -w -i -E 'Host|HostName' ~/.ssh/config | sed 's/Host //' | sed 's/HostName //'"
 alias cls="clear"
 alias slog="script -a ~/logs/Terminal_Logging/(date +"%Y_%m_%d_%I_%M_%p").log"
-alias play="asciinema play ~/logs/(ls logs/ | fzf -q '.cast ')"
+alias play="asciinema play ~/logs/(ls ~/logs/ | fzf -q '.cast ')"
 alias grep="grep -i"
 alias dot='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ls='lsd --group-dirs first'
@@ -29,6 +29,7 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 alias htop='sudo htop'
+alias keka='open -a Keka '
 
 function fssh -d "Fuzzy-find ssh host via ag and ssh into it"
   ag --ignore-case '^host [^*]' ~/.ssh/config | cut -d ' ' -f 2 | fzf | read -l result; and ssh "$result"
