@@ -8,5 +8,5 @@ function fish_greeting -d "What's up, fish?"
 
     set_color normal
 
-    host -t txt istheinternetonfire.com | cut -f 2 -d '"' | pokemonsay
+    host -W 1 -t txt istheinternetonfire.com | cut -f 2 -d '"' | pokemonsay
 end
