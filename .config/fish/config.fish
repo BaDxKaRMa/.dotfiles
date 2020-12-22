@@ -1,8 +1,4 @@
-# Bobthefish settings
-set -g theme_display_user ssh
-set -g theme_display_hostname ssh
-set -g theme_date_format "+%Y-%m-%d %H:%M"
-
+# OS Specific stuff
 switch (uname)
     case Darwin
         #MAC
