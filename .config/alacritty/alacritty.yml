@@ -21,13 +21,13 @@ scrolling:
   history: 10000
 font:
   normal:
-    family: Hack Nerd Font
+    family: DroidSansMono Nerd Font
     style: Regluar
   bold:
-    family: Hack Nerd Font 
+    family: DroidSansMono Nerd Font
     style: Bold
   italic:
-    family: Hack Nerd Font 
+    family: DroidSansMono Nerd Font
     style: Italic
   size: 12.0
 
