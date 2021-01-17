@@ -36,6 +36,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS='-e --multi --cycle --height 75% --border --layout=reverse --bind ctrl-a:select-all+accept'
 export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --no-ignore'
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -100'"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
