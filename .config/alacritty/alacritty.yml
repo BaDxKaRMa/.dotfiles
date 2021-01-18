@@ -38,8 +38,8 @@ font:
 colors:
   # Default colors
   primary:
-    #old background: '#2D2A2E'
-    background: '#283039'
+    background: '#2D2A2E'
+    #background: '#283039'
     foreground: '#FCFCFA'
 
   # Normal colors

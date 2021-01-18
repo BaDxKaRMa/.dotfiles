@@ -5,7 +5,7 @@ switch (uname)
     case Linux
         #eval (dircolors -c ~/.dircolors/my.colors)
         #alias "ls=ls --color=auto --group-directories-first"
-        #alias p="sudo pacman"
+        #alias apt="sudo apt"
         #alias pp="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
         #if status --is-interactive
         #       keychain --eval --quiet -Q id_rsa | source
