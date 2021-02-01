@@ -26,6 +26,7 @@ alias lla='ls -la'
 alias lt='ls --tree'
 alias htop='sudo htop'
 alias keka='open -a Keka'
+alias brewlist="brew leaves | xargs brew deps --include-build --tree"
 
 function fssh -d "Fuzzy-find ssh host via ag and ssh into it"
   ag --ignore-case '^host [^*]' ~/.ssh/config | cut -d ' ' -f 2 | fzf | read -l result; and ssh "$result"
