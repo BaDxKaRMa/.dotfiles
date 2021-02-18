@@ -18,7 +18,14 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(git zsh-autosuggestions sublime zsh-syntax-highlighting zsh-completions)
+plugins=(
+    git
+    sublime
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    zsh-completions
+    zsh-history-substring-search
+    )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -55,6 +62,11 @@ alias htop='sudo htop'
 alias keka='open -a Keka'
 alias brewlist="brew leaves | xargs brew deps --include-build --tree"
 alias checkcert='CheckCert.sh -c'
+
+# OMZ Plug ins
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
