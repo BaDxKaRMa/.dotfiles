@@ -47,6 +47,7 @@ export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --no-ignore'
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -100'"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 bindkey "ç" fzf-cd-widget
+export FZF_COMPLETION_TRIGGER='**'
 
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
