@@ -42,7 +42,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='vim'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --no-ignore'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-# export FZF_DEFAULT_OPTS='-e --multi --cycle --height 76% --border --layout=reverse --bind ctrl-a:select-all+accept'
+export FZF_CTRL_R_OPTS='-e --cycle --height 76% --border --layout=reverse'
 export FZF_DEFAULT_OPTS="--ansi --multi --layout=reverse --bind ctrl-a:select-all+accept --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --no-ignore'
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -100'"
@@ -51,37 +51,17 @@ bindkey "ç" fzf-cd-widget
 export FZF_COMPLETION_TRIGGER='**'
 
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias cls="clear"
-alias sshhosts="grep -w -i -E 'Host|HostName' ~/.ssh/config | sed 's/Host //' | sed 's/HostName //'"
-alias slog="script -a ~/logs/Terminal_Logging/(date +"%Y_%m_%d_%I_%M_%p").log"
-alias play="asciinema play ~/logs/(ls ~/logs/ | fzf -q '.cast ')"
-alias grep="grep -i"
-alias dot='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias ls='lsd --group-dirs first'
-alias l='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
-alias lt='ls --tree'
-alias htop='sudo htop'
-alias keka='open -a Keka'
-alias brewlist="brew leaves | xargs brew deps --include-build --tree"
-alias checkcert='CheckCert.sh -c'
-alias vi='vim'
-alias dcam='dot commit -a -m'
-
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# iTerm2 Shell Integration init
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-
+# fzf init
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# pyenv init
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
