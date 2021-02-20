@@ -1,4 +1,9 @@
 # Welcome
+echo -e '\033[1;30m'$(uname -nmsr)'\033[0m'
+echo -e '\033[1;30m'$(uptime)'\033[0m'
+
+
+
 fortune | pokemonsay
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -27,7 +32,7 @@ plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
     zsh-completions
-    zsh-history-substring-search
+    history-substring-search
     )
 
 source $ZSH/oh-my-zsh.sh
@@ -41,6 +46,8 @@ export FZF_DEFAULT_OPTS='-e --multi --cycle --height 75% --border --layout=rever
 export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --no-ignore'
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -100'"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+bindkey "ç" fzf-cd-widget
+
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -65,7 +72,14 @@ alias htop='sudo htop'
 alias keka='open -a Keka'
 alias brewlist="brew leaves | xargs brew deps --include-build --tree"
 alias checkcert='CheckCert.sh -c'
+alias vi='vim'
+alias dcam='dot commit -a -m'
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

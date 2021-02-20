@@ -13,7 +13,6 @@ set termguicolors
 " }}}
 " Spaces & Tabs {{{
 set tabstop=4           " 4 space tab
-set expandtab           " use spaces for tabs
 set softtabstop=4       " 4 space tab
 set shiftwidth=4
 set modelines=1
