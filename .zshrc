@@ -29,9 +29,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
     git
     sublime
+    zsh-completions
     zsh-autosuggestions
     zsh-syntax-highlighting
-    zsh-completions
     history-substring-search
     )
 

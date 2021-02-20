@@ -132,6 +132,7 @@ set ttimeout
 set ttimeoutlen=1
 set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
 set ttyfast
+set scrolloff=10
 " }}}
 " Searching {{{
 set ignorecase          " ignore case when searching
