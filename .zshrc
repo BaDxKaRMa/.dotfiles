@@ -42,7 +42,8 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='vim'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --no-ignore'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_DEFAULT_OPTS='-e --multi --cycle --height 75% --border --layout=reverse --bind ctrl-a:select-all+accept'
+# export FZF_DEFAULT_OPTS='-e --multi --cycle --height 76% --border --layout=reverse --bind ctrl-a:select-all+accept'
+export FZF_DEFAULT_OPTS="--ansi --multi --layout=reverse --bind ctrl-a:select-all+accept --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --no-ignore'
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -100'"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
