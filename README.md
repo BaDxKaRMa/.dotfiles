@@ -27,7 +27,6 @@
 |:----------:|:-------------:|
 |`git`|You need to download the repo|
 |`curl`|Download the zsh brew gist|
-|`xsecurelock`|Used to lock the screen|
 
 <a name="firsttime"></a>
 ## First Time Setup ##
