@@ -26,7 +26,7 @@
 |Dependency|Description|
 |:----------:|:-------------:|
 |`git`|You need to download the repo|
-|`curl`|Download the zsh brew gist|
+|`curl`|Download the web things|
 
 <a name="firsttime"></a>
 ## First Time Setup ##
