@@ -16,7 +16,7 @@
 <a name="details"></a>
 ## Details ##
 + **OS**: MacOS
-+ **Shell**: zsh
++ **Shell**: zsh (omz)
 + **Terminal**: iTerm2
 + **Font**: Hack Nerd Font (Patched)
 
