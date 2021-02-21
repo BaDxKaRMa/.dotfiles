@@ -8,3 +8,4 @@ export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -100'"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 bindkey "ç" fzf-cd-widget
 export FZF_COMPLETION_TRIGGER='**'
+export GPG_TTY=$(tty)
