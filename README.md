@@ -80,7 +80,6 @@ rm -r tmpdotfiles
 
 <a name="folderStructure"></a>
 ## Folder File Structure ##
-In order to avoid a poorly organized `rc.lua` spanning thousands of lines, it has been split into multiple files / folders:
 + `rc.lua`: Contains the script that runs when awesome starts (essentially links all the other files together)
 
 <a name="applications"></a>
@@ -93,15 +92,3 @@ In order to avoid a poorly organized `rc.lua` spanning thousands of lines, it ha
 <a name="notes"></a>
 ## Notes ##
 
-## Fisher ##
-```
-jorgebucaran/fisher
-IlanCosman/tide
-oh-my-fish/plugin-aws
-oh-my-fish/plugin-brew
-oh-my-fish/plugin-bang-bang
-PatrickF1/fzf.fish
-jhillyerd/plugin-git
-franciscolourenco/done
-markcial/upto
-```
