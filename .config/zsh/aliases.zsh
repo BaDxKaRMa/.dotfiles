@@ -15,3 +15,7 @@ alias brewlist="brew leaves | xargs brew deps --include-build --tree"
 alias checkcert='CheckCert.sh -c'
 alias vi='vim'
 alias dcam='dot commit -a -m'
+
+# Work
+alias wz='whatzone.py'
+alias f5='f5.py'
