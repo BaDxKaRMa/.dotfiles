@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>Dotfiles with the Sauce</h1>
+    <h1>Dotfiles with the Sauce!</h1>
 </div>
 
 [![HitCount](http://hits.dwyl.com/badxkarma/modern-awesome.svg)](http://hits.dwyl.com/badxkarma/modern-awesome)
