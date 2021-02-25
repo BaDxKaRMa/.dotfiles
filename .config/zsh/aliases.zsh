@@ -11,6 +11,7 @@ alias dcam='dot commit -a -m'
 alias dst='dot status'
 alias dl='dot pull'
 alias dp='dot push'
+alias da='dot add'
 
 alias ls='lsd --group-dirs first'
 alias l='ls -l'
