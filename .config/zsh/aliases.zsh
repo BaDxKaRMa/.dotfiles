@@ -28,3 +28,6 @@ alias checkcert='CheckCert.sh -c'
 
 alias vi='vim'
 
+# Work
+alias wz='whatzone.py'
+alias f5='f5.py'
