@@ -12,9 +12,9 @@ set backspace=indent,eol,start
 set termguicolors
 " }}}
 " Spaces & Tabs {{{
-set tabstop=4           " 4 space tab
-set softtabstop=4       " 4 space tab
-set shiftwidth=4
+set tabstop=4           " How many spaces is a tab worth
+set softtabstop=4       " More of the same
+set shiftwidth=4		" How many spaces is one indent worth
 set modelines=1
 filetype indent on
 filetype plugin on
