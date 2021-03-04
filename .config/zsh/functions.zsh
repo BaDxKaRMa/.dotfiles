@@ -13,6 +13,15 @@ function bdig { # bulk dig
 	done
 }
 
+function bwz { # bulk dig
+	[[ -f ~/scrap ]] ||  { echo "~/scrap does not exist."; return 1; }
+	for item in $(readfile ~/scrap); do 
+		if [[ $item =~ ^[[:digit:]] ]] ; then
+			wz $item
+		fi
+	done
+}
+
 function readfile {
 	while IFS= read -r line; do
 		echo $line
