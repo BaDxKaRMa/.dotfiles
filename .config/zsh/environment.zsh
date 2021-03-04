@@ -3,7 +3,7 @@ export EDITOR='vim'
 
 # FZF
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --no-ignore'
-export FZF_DEFAULT_OPTS="--ansi --multi --layout=reverse --bind ctrl-a:select-all+accept --preview-window 'right:60%' --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'"
+export FZF_DEFAULT_OPTS="--ansi --multi --layout=reverse --bind ctrl-a:select-all+accept --preview-window 'right:60%' --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200' --bind '?:toggle-preview'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_R_OPTS='-e --cycle --height 50% --border --layout=reverse --preview='''
 export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --no-ignore'
