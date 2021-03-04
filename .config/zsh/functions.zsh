@@ -24,3 +24,23 @@ function myip {
     echo $ip | pbcopy
     echo $ip
 }
+
+function rec {
+    if test -z "$argv" ; then
+        asciinema rec ~/logs/$(date +%F_%T%Z).cast
+    else
+        asciinema rec ~/logs/$argv.cast
+	fi
+}
+
+function makegif {
+    if test -z "$argv" ; then
+        asciicast2gif ~/logs/$(ls logs/ | fzf -q ".cast ") ~/logs/gifs/latest.gif
+    else
+        asciicast2gif ~/logs/$(ls logs/ | fzf -q ".cast ") ~/logs/gifs/$argv.gif
+	fi
+}
+
+function play {
+	asciinema play ~/logs/$(ls ~/logs/ | fzf -q '.cast ' --preview='' --height=40 --prompt='Which file >')
+}

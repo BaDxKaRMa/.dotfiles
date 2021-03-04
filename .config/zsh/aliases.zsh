@@ -1,8 +1,7 @@
 alias cls="clear"
 alias sshhosts="grep -w -i -E 'Host|HostName' ~/.ssh/config | sed 's/Host //' | sed 's/HostName //'"
 
-alias slog="script -a ~/logs/Terminal_Logging/(date +"%Y_%m_%d_%I_%M_%p").log"
-alias play="asciinema play ~/logs/(ls ~/logs/ | fzf -q '.cast ')"
+# alias slog="script -a ~/logs/Terminal_Logging/$(date +"%Y_%m_%d_%I_%M_%p").log"
 
 alias grep="grep -i"
 
