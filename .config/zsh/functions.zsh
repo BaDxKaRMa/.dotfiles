@@ -9,15 +9,17 @@ function fssh {  # Fuzzy-find ssh host via ag and ssh into it
 }
 
 function bdig { # bulk dig
-	str=$(cat ~/scrap)
-	if [[ ${str:0:1} == "1" ]] ; then
-		for ip in $str ; do
-			echo -n $ip,
-			dig -x $ip
-		done
-	else
-		for host in $str ; do
-			dig $host
-		done
-	fi
+	for item in $(readfile ~/scrap); do 
+		if [[ $item =~ ^[[:digit:]] ]] ; then
+			dig -x $item
+		else
+			dig $item
+		fi
+	done
+}
+
+function readfile {
+	while IFS= read -r line; do
+		echo $line
+	done < "$1"
 }
