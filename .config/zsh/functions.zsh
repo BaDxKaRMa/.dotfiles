@@ -44,3 +44,8 @@ function makegif {
 function play {
 	asciinema play ~/logs/$(ls ~/logs/ | fzf -q '.cast ' --preview='' --height=40 --prompt='Which file >')
 }
+
+function slog {
+	[[ -d ~/logs/slogs ]] ||  { echo "~/logs/slogs/ does not exist."; return 1; }
+	script -a ~/logs/slogs/$(date +"%Y_%m_%d_%I_%M_%p").log
+}
