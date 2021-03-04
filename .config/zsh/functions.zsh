@@ -9,6 +9,7 @@ function fssh {  # Fuzzy-find ssh host via ag and ssh into it
 }
 
 function bdig { # bulk dig
+	[[ -f ~/scrap ]] ||  { echo "~/scrap does not exist."; return 1; }
 	for item in $(readfile ~/scrap); do 
 		if [[ $item =~ ^[[:digit:]] ]] ; then
 			dig -x $item
