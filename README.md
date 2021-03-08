@@ -2,7 +2,7 @@
     <h1>Dotfiles with the Sauce</h1>
 </div>
 
-[![HitCount](http://hits.dwyl.com/badxkarma/modern-awesome.svg)](http://hits.dwyl.com/badxkarma/modern-awesome)
+[![HitCount](http://hits.dwyl.com/BaDxKaRMa/dotfiles.svg)](http://hits.dwyl.com/BaDxKaRMa/dotfiles)
 
 ## Contents ##
 1. [Details](#details)
