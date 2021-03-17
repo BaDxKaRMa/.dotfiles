@@ -1,5 +1,5 @@
 function fssh {  # Fuzzy-find ssh host via ag and ssh into it
-	ssh $(ag --ignore-case '^host [^*]' ~/.ssh/config | cut -d ' ' -f 2 | fzf --preview='' --prompt='SSH To > ' --height=40)
+	ssh $(ag --ignore-case '^host [^*]' ~/.ssh/config | cut -d ' ' -f 2 | fzf --preview='' --prompt='SSH To > ' --height=20 --border)
 }
 
 function bdig { # bulk dig
