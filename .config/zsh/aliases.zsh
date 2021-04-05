@@ -29,3 +29,4 @@ alias vi='vim'
 # Work
 alias wz='whatzone.py'
 alias f5='f5.py'
+alias scrap='vi ~/scrap'
