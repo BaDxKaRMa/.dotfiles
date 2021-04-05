@@ -10,7 +10,7 @@ function bdig { # bulk dig
 		else
 			res=$(dig $item +short)
 		fi
-	echo $item'-'$res
+	echo $item':'$res
 	done
 }
 
