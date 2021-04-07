@@ -6,10 +6,11 @@ function bdig { # bulk dig
 	[[ -f ~/scrap ]] ||  { echo "~/scrap does not exist."; return 1; }
 	for item in $(readfile ~/scrap); do 
 		if [[ $item =~ ^[[:digit:]] ]] ; then
-			dig -x $item
+			res=$(dig -x $item +short)
 		else
-			dig $item +short
+			res=$(dig $item +short)
 		fi
+	echo $item'='$res
 	done
 }
 
