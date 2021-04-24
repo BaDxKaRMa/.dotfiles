@@ -32,3 +32,6 @@ alias wz='whatzone.py'
 alias f5='f5.py'
 alias scrap='vi ~/scrap'
 alias ipdb='IPDB.py'
+
+# Auto Complete Alias on TAB
+zstyle ':completion:*' completer _expand_alias _complete _ignored
