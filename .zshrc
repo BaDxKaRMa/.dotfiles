@@ -11,6 +11,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
     git
     sublime
+	fzf-tab
     zsh-completions
     zsh-autosuggestions
     zsh-syntax-highlighting
