@@ -6,6 +6,7 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --no-ignore'
 export FZF_DEFAULT_OPTS="
 --ansi 
 --multi 
+--exact
 --layout=reverse 
 --bind '?:toggle-preview'
 --bind ctrl-a:select-all+accept 
