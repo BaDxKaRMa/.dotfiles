@@ -10,7 +10,7 @@ function bdig { # bulk dig
 		else
 			res=$(dig $item +short)
 		fi
-	echo $item'='$res
+	paste <(printf %s "$item") <(printf %s "$res")
 	done
 }
 
