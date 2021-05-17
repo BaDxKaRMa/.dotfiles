@@ -26,12 +26,7 @@ alias brewlist="brew leaves | xargs brew deps --include-build --tree"
 alias checkcert='CheckCert.sh -c'
 
 alias vi='vim'
-
-# Work
-alias wz='whatzone.py'
-alias f5='f5.py'
 alias scrap='vi ~/scrap'
-alias ipdb='IPDB.py'
 
 # Auto Complete Alias on TAB
 zstyle ':completion:*' completer _expand_alias _complete _ignored
