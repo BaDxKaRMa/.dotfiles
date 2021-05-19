@@ -15,9 +15,10 @@ alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
-alias matrix='/Users/xrxh140/Library/Python/2.7/bin/unimatrix -n -s 94 -l o -f'
+alias matrix='cmatrix -n -s 94 -l o'
 
 alias htop='sudo htop'
+alias dm='docker-machine'
 
 alias keka='open -a Keka'
 
