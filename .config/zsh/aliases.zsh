@@ -15,6 +15,7 @@ alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
+alias lta='lt -a'
 alias matrix='cmatrix -n -s 94 -l o'
 
 alias htop='sudo htop'
