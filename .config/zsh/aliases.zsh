@@ -30,5 +30,7 @@ alias checkcert='CheckCert.sh -c'
 alias vi='vim'
 alias scrap='vi ~/scrap'
 
+alias up='python3 -m http.server'
+
 # Auto Complete Alias on TAB
 zstyle ':completion:*' completer _expand_alias _complete _ignored
