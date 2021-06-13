@@ -2,7 +2,7 @@
     <h1>Dotfiles with the Sauce</h1>
 </div>
 
-[![HitCount](http://hits.dwyl.com/BaDxKaRMa/dotfiles.svg)](http://hits.dwyl.com/BaDxKaRMa/dotfiles)
+![Hits](https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fgithub.com%2Fbadxkarma%2F.dotfiles)
 
 ## Contents ##
 1. [Details](#details)
@@ -79,16 +79,18 @@ rm -r tmpdotfiles
 ```
 
 <a name="folderStructure"></a>
-## Folder File Structure ##
-+ `rc.lua`: Contains the script that runs when awesome starts (essentially links all the other files together)
+## Config Folder File Structure ##
++ `.config`: Base folder used to store user configs
++ `zsh`: Contains Aliases, Functions, welcome, and environment variables
 
 <a name="applications"></a>
 ## My Preferred Applications ##
 + **Text Editor - Vim:** It's just cool and easy to use
-+ **Other Text Editor - Sublime Text:** It's a better Notepad++
++ **Other Text Editor - Sublime Text:** It's a crossplatform Notepad++
 + **Web Browser - Safari**: Safari (Firefox backup)
 + **Terminal - iTerm2**: It should just be stock
 
 <a name="notes"></a>
 ## Notes ##
 
+This README is under a major re-haul. Excuse the mess.

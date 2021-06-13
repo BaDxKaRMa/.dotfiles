@@ -31,6 +31,7 @@ alias vi='vim'
 alias scrap='vi ~/scrap'
 
 alias up='python3 -m http.server'
+alias nmapscan='nmap -sC -sV -v -p- -oA nmap/initial --stylesheet /opt/nmapstyle.xsl'
 
 # Auto Complete Alias on TAB
 zstyle ':completion:*' completer _expand_alias _complete _ignored
