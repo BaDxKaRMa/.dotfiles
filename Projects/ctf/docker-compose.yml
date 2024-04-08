@@ -1,0 +1,26 @@
+services:
+  kali:
+    build:
+      context: .
+      args:
+        USERNAME: badmin
+    image: ctf-kali
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+    container_name: kali
+    restart: unless-stopped
+    hostname: kali
+    environment:
+      - TERM=xterm-256color
+      - DISPLAY=host.docker.internal:0
+      - _JAVA_OPTIONS="-Dsun.java2d.xrender=false"
+    ports:
+      - 8888:8888 # Tinyproxy
+    volumes:
+      - ".:/home/badmin/ctf"
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
