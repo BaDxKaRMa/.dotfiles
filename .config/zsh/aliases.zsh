@@ -42,6 +42,7 @@ alias toc="gh-md-toc"
 alias lower='tr "[:upper:]" "[:lower:]"'
 alias prettyjson='python -m json.tool'
 alias wp='whatportis'
+alias cyberchef='docker run -it -p 8080:80 ghcr.io/gchq/cyberchef:latest'
 
 # jq json to csv with headers
 alias jsontocsv="jq --raw-output '(map(keys) | add | unique) as \$cols | map(. as \$row | \$cols | map(\$row[.])) as \$rows | \$cols, \$rows[] | @csv'"
