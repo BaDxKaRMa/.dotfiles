@@ -26,6 +26,9 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # Bat Theme
 export BAT_THEME='Monokai Extended'
 
+# Homebrew no hints
+export HOMEBREW_NO_ENV_HINTS=True
+
 # Fix for gpg signing
 export GPG_TTY=$TTY
 
