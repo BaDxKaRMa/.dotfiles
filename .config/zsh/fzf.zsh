@@ -31,3 +31,6 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd --color=always --group-dirs fir
 zstyle ':fzf-tab:*' switch-group ',' '.'
 # set list-colors to enable filename colorizing
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+zstyle ':completion:*' menu select
+add_to_fpath "~/.zfunc"

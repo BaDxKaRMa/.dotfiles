@@ -24,7 +24,7 @@ export FZF_COMPLETION_TRIGGER='**'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Bat Theme
-export BAT_THEME='Monokai Extended'
+export BAT_THEME='ansi'
 
 # Homebrew no hints
 export HOMEBREW_NO_ENV_HINTS=True
