@@ -32,7 +32,9 @@ RUN apt-get update && apt-get -y install \
   xclip \
   python3.12-venv \
   npm \
-  fzf
+  fzf \
+  neofetch \
+  tmux
 
 # Install Tinyproxy
 RUN apt-get install -y tinyproxy
@@ -65,6 +67,9 @@ RUN git checkout stable && \
   cd build && cpack -G DEB && dpkg -i nvim-linux64.deb
 
 RUN wget --output-document /opt/nmapstyle.xsl https://raw.githubusercontent.com/Haxxnet/nmap-bootstrap-xsl/main/nmap-bootstrap.xsl
+
+USER root
+RUN service tinyproxy start
 
 # Switch to the badmin user
 USER badmin
@@ -115,5 +120,5 @@ RUN rsync --recursive --verbose --exclude '.git' $HOME/tmpdotfiles/ $HOME
 
 RUN rm -rf $HOME/tmpdotfiles/
 
-# Start a zsh shell when the container starts
-CMD ["sh", "-c", "service tinyproxy start && zsh"]
+# Start tmux when the container starts
+CMD ["tmux"]
