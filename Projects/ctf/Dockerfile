@@ -112,7 +112,6 @@ RUN $HOME/.pokemonsay/install.sh
 # Install Tmux TPM
 RUN git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-RUN echo "cache"
 # Clone your dotfiles repository into a temporary directory in the badmin user's home directory
 RUN git clone --separate-git-dir=$HOME/.dotfiles https://github.com/BaDxKaRMa/.dotfiles.git $HOME/tmpdotfiles
 
