@@ -19,7 +19,6 @@ local prompts = {
 }
 
 return {
-  { import = "lazyvim.plugins.extras.coding.copilot" },
   {
     dir = IS_DEV and "~/Projects/research/CopilotChat.nvim" or nil,
     "CopilotC-Nvim/CopilotChat.nvim",
@@ -29,6 +28,7 @@ return {
     dependencies = {
       { "nvim-telescope/telescope.nvim" }, -- Use telescope for help actions
       { "nvim-lua/plenary.nvim" },
+      { "zbirenbaum/copilot.lua" },
     },
     opts = {
       question_header = "## User ",
