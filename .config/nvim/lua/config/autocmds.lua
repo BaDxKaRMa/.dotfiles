@@ -7,6 +7,10 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_augroup("alpha_on_empty", { clear = true })
+
+-- Create an autocmd that triggers on the "BDeletePost*" user event
+-- This autocmd is part of the "alpha_on_empty" group
+-- The callback function checks if the buffer is empty and if so, runs the "Alpha" command
 vim.api.nvim_create_autocmd("User", {
   pattern = "BDeletePost*",
   group = "alpha_on_empty",
