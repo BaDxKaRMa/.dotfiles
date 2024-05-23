@@ -2311,7 +2311,7 @@ The script should do this: \(ai.prompt)</string>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>Size Changes Affect Profile</key>
 	<true/>
 	<key>SoundForEsc</key>
