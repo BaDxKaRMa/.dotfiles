@@ -24,9 +24,9 @@
 
 - **OS**: macOS
 - **Shell**: zsh (omz)
-- **Terminal**: iTerm2
-- **Font**: Monaspace (Radon)
-- Editor/PDE: Neovim
+- **Terminal**: [iTerm2](https://iterm2.com/)
+- **Font**: [Monaspace](https://monaspace.githubnext.com/) (Radon)
+- Editor/PDE: [Neovim](https://neovim.io/)
 
 <a name="dependencies"></a>
 
@@ -50,7 +50,7 @@ mkdir $HOME/.dotfiles
 git init --bare $HOME/.dotfiles
 ```
 
-Next, I added an alias that I use for this repo. This is the special sauce of this setup. When calling my dotfiles git, I will now use `dot`.
+Next, I added an alias that I use for this repo. This is the special sauce of this setup. When calling my dotfiles git, I will now use `dot`. This needs to be added to your profile somewhere (like a `.zshrc` file.)
 
 ```
 alias dot='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -101,3 +101,14 @@ rm -r tmpdotfiles
 <a name="notes"></a>
 
 ## Notes
+
+### Useful Aliases
+
+```zsh
+alias dot='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dcam='dot commit -a -m'
+alias dst='dot status'
+alias dl='dot pull'
+alias dp='dot push'
+alias da='dot add'
+```
