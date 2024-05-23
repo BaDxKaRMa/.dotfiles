@@ -35,7 +35,7 @@
 | Dependency |          Description          |
 | :--------: | :---------------------------: |
 |   `git`    | You need to download the repo |
-|   `curl`   |    Download the web things    |
+|  `rsync`   | If you need to override files |
 
 <a name="firsttime"></a>
 
