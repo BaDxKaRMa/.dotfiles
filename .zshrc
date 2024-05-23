@@ -48,9 +48,9 @@ plugins=(
   zsh-autosuggestions
   git
   sublime
-	docker
+  docker
   history-substring-search
-	autoswitch_virtualenv $plugins
+  autoswitch_virtualenv $plugins
   autoupdate
   ssh-agent
   zsh-syntax-highlighting
