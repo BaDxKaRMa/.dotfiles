@@ -74,15 +74,15 @@ function compare {
 }
 
 function quser {
-	dscl "/Active Directory/US/All Domains/" -read /Users/$argv RecordName RealName JobTitle dsAttrTypeNative:ou EMailAddress | sed 's/dsAttrTypeNative:ou:/Department/g' | sed 's/EMailAddress:/EMailAddress:\n/g' | sed 's/RecordName:/RecordName:\n/g'
+	dscl "/Active Directory/lab.local/All Domains/" -read /Users/$argv RecordName RealName JobTitle dsAttrTypeNative:ou EMailAddress | sed 's/dsAttrTypeNative:ou:/Department/g' | sed 's/EMailAddress:/EMailAddress:\n/g' | sed 's/RecordName:/RecordName:\n/g'
 }
 
 function qemail {
-	dscl "/Active Directory/US/All Domains/" -search /Users EMailAddress "$argv" | awk '{ print $1 }' | sed 's/[")]//g' | xargs
+	dscl "/Active Directory/lab.local/All Domains/" -search /Users EMailAddress "$argv" | awk '{ print $1 }' | sed 's/[")]//g' | xargs
 }
 
 function qgroups {
-	dscl "/Active Directory/US/All Domains/" -read /Users/$argv dsAttrTypeNative:memberOf
+	dscl "/Active Directory/lab.local/All Domains/" -read /Users/$argv dsAttrTypeNative:memberOf
 }
 
 function git-list-config {
