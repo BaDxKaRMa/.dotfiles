@@ -21,6 +21,8 @@ fi
 
 export FZF_DEFAULT_OPTS='-i -m'
 
+# Auto Complete Alias on TAB
+zstyle ':completion:*' completer _expand_alias _complete _ignored
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
 # set descriptions format to enable group support

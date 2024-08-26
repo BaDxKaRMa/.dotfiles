@@ -21,13 +21,13 @@ alias matrix='cmatrix -n -s 94 -l o'
 alias htop='sudo htop'
 
 if [[ "$OSTYPE" != "darwin"* ]]; then
-	alias bat='batcat'
+  alias bat='batcat'
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-	alias keka='open -a Keka'
-	alias dm='docker-machine'
-	alias brewlist="brew leaves | xargs brew deps --include-build --tree"
+  alias keka='open -a Keka'
+  alias dm='docker-machine'
+  alias brewlist="brew leaves | xargs brew deps --include-build --tree"
 fi
 
 alias checkcert='CheckCert.sh -c'
@@ -43,12 +43,10 @@ alias lower='tr "[:upper:]" "[:lower:]"'
 alias prettyjson='python -m json.tool'
 alias wp='whatportis'
 alias cyberchef='docker run -it -p 8080:80 ghcr.io/gchq/cyberchef:latest'
+alias mtr='sudo mtr'
 
 # jq json to csv with headers
 alias jsontocsv="jq --raw-output '(map(keys) | add | unique) as \$cols | map(. as \$row | \$cols | map(\$row[.])) as \$rows | \$cols, \$rows[] | @csv'"
-
-# Auto Complete Alias on TAB
-zstyle ':completion:*' completer _expand_alias _complete _ignored
 
 # pip update all outdated
 alias pipupdateall='pip3 list -o | grep -v -i warning | cut -f1 -d" " | tr " " "\n" | awk "{if(NR>=3)print}" | cut -d" " -f1 | xargs -n1 pip3 install -U'
