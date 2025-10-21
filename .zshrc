@@ -43,6 +43,7 @@ source "$ZSH/oh-my-zsh.sh"
 zsh-defer -t 1.0 source "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/autoswitch_virtualenv/autoswitch_virtualenv.plugin.zsh"
 zsh-defer -t 1.5 source "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/ssh-agent/ssh-agent.plugin.zsh"
 zsh-defer -t 2.0 source "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fzf-tab/fzf-tab.plugin.zsh"
+zsh-defer -t 2.5 source "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/autoupdate/autoupdate.plugin.zsh"
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
