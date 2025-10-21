@@ -1,4 +1,4 @@
 return {
-  { "echasnovski/mini.bufremove", enabled = false },
-  { "echasnovski/mini.pairs", enabled = false },
+  { "nvim-mini/mini.bufremove", enabled = false },
+  { "nvim-mini/mini.pairs", enabled = false },
 }

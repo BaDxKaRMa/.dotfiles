@@ -31,27 +31,19 @@ function add_to_path() {
 # Theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# pyenv stuff
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null && add_to_path "$PYENV_ROOT/bin"
-eval "$(pyenv init -)"
-
 add_to_fpath "${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src"
 command -v brew >/dev/null && add_to_fpath "$(brew --prefix)/share/zsh/site-functions"
 
 # plugins for oh-my-zsh
 plugins=(
-  aws
   fzf-tab
   fzf
   zsh-completions
   zsh-autosuggestions
   git
   sublime
-  docker
   history-substring-search
-  autoswitch_virtualenv $plugins
-  autoupdate
+  autoswitch_virtualenv
   ssh-agent
   zsh-syntax-highlighting
 )
