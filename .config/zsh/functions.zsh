@@ -1,3 +1,22 @@
+# functions for pathing
+# FPATH function
+function add_to_fpath() {
+  for dir; do
+    if [[ -d "$dir" ]] && [[ ":${fpath[*]}:" != *":$dir:"* ]]; then
+      fpath=("$dir" $fpath)
+    fi
+  done
+}
+
+# PATH function
+function add_to_path() {
+  for dir; do
+    if [[ -d "$dir" ]] && [[ ":${path[*]}:" != *":$dir:"* ]]; then
+      path=("$dir" $path)
+    fi
+  done
+}
+
 function fssh { # Fuzzy-find ssh host via ag and ssh into it
   ssh $(ag --ignore-case '^host [^*]' ~/.ssh/config | cut -d ' ' -f 2 | fzf --preview='' --prompt='SSH To > ' --height=20 --border)
 }
