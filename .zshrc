@@ -1,3 +1,12 @@
+# Cache completions for faster startup
+autoload -Uz compinit
+zcompdump="${ZDOTDIR:-$HOME}/.zcompdump"
+if [[ -f "$zcompdump" ]] && [[ $(date +'%Y-%m-%d') != $(date -r "$zcompdump" +'%Y-%m-%d') ]]; then
+  compinit
+else
+  compinit -C
+fi
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -36,26 +45,20 @@ command -v brew >/dev/null && add_to_fpath "$(brew --prefix)/share/zsh/site-func
 
 # plugins for oh-my-zsh
 plugins=(
-  fzf-tab
-  fzf
-  zsh-completions
-  zsh-autosuggestions
   git
   sublime
-  history-substring-search
+  zsh-completions
+  fzf
+  fzf-tab
   autoswitch_virtualenv
   ssh-agent
+  history-substring-search
+  zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
 source "$ZSH/oh-my-zsh.sh"
 
-# aws-vault and pipx completion
-eval "$(register-python-argcomplete pipx)"
-if command -v aws-vault &> /dev/null
-then
-    eval "$(aws-vault --completion-script-zsh)"
-fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

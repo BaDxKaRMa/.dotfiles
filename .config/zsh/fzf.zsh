@@ -1,38 +1,22 @@
-# Setup fzf
-# ---------
+# FZF
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --no-ignore'
+export FZF_DEFAULT_OPTS="
+-i
+--ansi
+--multi
+--exact
+--layout=reverse
+--bind '?:toggle-preview'
+--bind ctrl-a:select-all+accept
+--preview-window 'right:60%'
+--preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
+"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_R_OPTS='-i -e --cycle --height 50% --border --layout=reverse --preview='''
+export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --no-ignore'
+bindkey "ç" fzf-cd-widget
+export FZF_COMPLETION_TRIGGER='**'
 
-# Check for M1
-if [ -d "/opt/homebrew/" ]; then
-	if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
-		add_to_path "/opt/homebrew/opt/fzf/bin"
-	fi
-	[[ $- == *i* ]] && source "/opt/homebrew/opt/fzf/shell/completion.zsh" 2>/dev/null
-	source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
-fi
-
-# Check for Intel
-if [ -d "/usr/local/Homebrew/" ]; then
-	if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
-		add_to_path "/usr/local/opt/fzf/bin"
-	fi
-	[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2>/dev/null
-	source "/usr/local/opt/fzf/shell/key-bindings.zsh"
-fi
-
-export FZF_DEFAULT_OPTS='-i -m'
-
-# Auto Complete Alias on TAB
-zstyle ':completion:*' completer _expand_alias _complete _ignored
-# disable sort when completing `git checkout`
-zstyle ':completion:*:git-checkout:*' sort false
-# set descriptions format to enable group support
-zstyle ':completion:*:descriptions' format '[%d]'
-# preview directory's content with exa when completing cd
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd --color=always --group-dirs first $realpath'
-# switch group using `,` and `.`
-zstyle ':fzf-tab:*' switch-group ',' '.'
-# set list-colors to enable filename colorizing
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
-zstyle ':completion:*' menu select
-add_to_fpath "~/.zfunc"
+# load z
+[[ -e "/usr/local/etc/profile.d/z.sh" ]] && . /usr/local/etc/profile.d/z.sh
+[[ -e "/opt/homebrew/etc/profile.d/z.sh" ]] && . /opt/homebrew/etc/profile.d/z.sh

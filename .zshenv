@@ -1,7 +1,17 @@
-# Vim > Vi
+# Path to your oh-my-zsh installation
+export ZSH="$HOME/.oh-my-zsh"
+export ZSH_CUSTOM="$HOME/.config/zsh"
+
+# Virtualenv settings
+export AUTOSWITCH_VIRTUAL_ENV_DIR=".virtualenv"
+
+# Pyenv configuration
+export PYENV_ROOT="$HOME/.pyenv"
+
+# Editor preference
 export EDITOR='vim'
 
-# FZF
+# FZF configurations
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --no-ignore'
 export FZF_DEFAULT_OPTS="
 -i
@@ -15,23 +25,15 @@ export FZF_DEFAULT_OPTS="
 --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
 "
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_CTRL_R_OPTS='-i -e --cycle --height 50% --border --layout=reverse --preview='''
+export FZF_CTRL_R_OPTS='-i -e --cycle --height 50% --border --layout=reverse --preview='
 export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --no-ignore'
-bindkey "ç" fzf-cd-widget
 export FZF_COMPLETION_TRIGGER='**'
 
-# Set bat for man pages
+# Terminal and tool configs
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
-# Bat Theme
 export BAT_THEME='ansi'
-
-# Homebrew no hints
 export HOMEBREW_NO_ENV_HINTS=True
-
-# Fix for gpg signing
 export GPG_TTY=$TTY
 
-# load z
-[[ -e "/usr/local/etc/profile.d/z.sh" ]] && . /usr/local/etc/profile.d/z.sh
-[[ -e "/opt/homebrew/etc/profile.d/z.sh" ]] && . /opt/homebrew/etc/profile.d/z.sh
+# PATH additions (use standard PATH syntax rather than add_to_path)
+export PATH="$HOME/bin:$PYENV_ROOT/bin:/opt/homebrew/opt/node@16/bin:/opt/homebrew/sbin:$PATH"
