@@ -2,23 +2,32 @@ FROM kalilinux/kali-rolling:latest
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TERM=xterm-256color
 
-# Bring everything up to date and install packages
-RUN apt-get update && apt-get -y install \
+# Update, upgrade, and install all tools
+RUN apt-get update && \
+  apt-get dist-upgrade -y && \
+  apt-get install -y \
   zsh \
   kali-linux-large \
+  kali-tools-exploitation \
+  kali-tools-passwords \
+  kali-tools-post-exploitation \
+  kali-tools-sniffing-spoofing \
+  kali-tools-web \
+  kali-tools-windows-resources \
+  kali-desktop-xfce \
   x11-apps \
+  xrdp \
+  xorg \
   burpsuite \
   firefox-esr \
   iputils-ping \
   feroxbuster \
   fonts-noto-color-emoji \
-  wkhtmltopdf \
   python3-venv \
   lsd \
   fortune \
   cowsay \
   bat \
-  tldr \
   ninja-build \
   gettext \
   cmake \
@@ -30,11 +39,28 @@ RUN apt-get update && apt-get -y install \
   luarocks \
   fd-find \
   xclip \
-  python3.12-venv \
   npm \
   fzf \
-  neofetch \
-  tmux
+  tmux \
+  wget \
+  git \
+  vim \
+  exiftool \
+  grepcidr \
+  htop \
+  jq \
+  lolcat \
+  mtr \
+  neovim \
+  p7zip-full \
+  pipx \
+  pwgen \
+  ruby \
+  speedtest-cli \
+  tree \
+  tinyproxy && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/*
 
 # Install Tinyproxy
 RUN apt-get install -y tinyproxy
@@ -120,5 +146,5 @@ RUN rsync --recursive --verbose --exclude '.git' $HOME/tmpdotfiles/ $HOME
 
 RUN rm -rf $HOME/tmpdotfiles/
 
-# Start tmux when the container starts
-CMD ["tmux"]
+# Start zsh when the container starts
+CMD ["zsh"]
