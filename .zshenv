@@ -2,6 +2,10 @@
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.config/zsh"
 
+#omz autoupdate settings
+export ZSH_CUSTOM_AUTOUPDATE_QUIET=true
+export ZSH_CUSTOM_AUTOUPDATE_NUM_WORKERS=8
+
 # Virtualenv settings
 export AUTOSWITCH_VIRTUAL_ENV_DIR=".virtualenv"
 
