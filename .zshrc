@@ -45,19 +45,21 @@ command -v brew >/dev/null && add_to_fpath "$(brew --prefix)/share/zsh/site-func
 
 # plugins for oh-my-zsh
 plugins=(
+  zsh-defer
   git
   sublime
   zsh-completions
   fzf
-  fzf-tab
-  autoswitch_virtualenv
-  ssh-agent
   history-substring-search
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
 source "$ZSH/oh-my-zsh.sh"
+
+zsh-defer source "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fzf-tab/fzf-tab.plugin.zsh"
+zsh-defer source "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/autoswitch_virtualenv/autoswitch_virtualenv.plugin.zsh"
+zsh-defer source "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/ssh-agent/ssh-agent.plugin.zsh"
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
