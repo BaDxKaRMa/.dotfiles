@@ -34,6 +34,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export BAT_THEME='ansi'
 export HOMEBREW_NO_ENV_HINTS=True
 export GPG_TTY=$TTY
+export ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # PATH additions (use standard PATH syntax rather than add_to_path)
-export PATH="$HOME/bin:$PYENV_ROOT/bin:/opt/homebrew/opt/node@16/bin:/opt/homebrew/sbin:$PATH"
+export PATH="$HOME/bin:$PYENV_ROOT/bin:/opt/homebrew/sbin:$PATH"
