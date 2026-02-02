@@ -19,7 +19,7 @@ declare -a server_array
 # Create the temp directory
 tmpdir=$(mktemp -d)
 
-# Specify files for info
+# Specify files for info 
 stdout_lock=$tmpdir/stdout
 success=$tmpdir/success
 failed=$tmpdir/failed
@@ -53,10 +53,10 @@ kill_script() {
 usage() {
     echo -e "$yellow""
 $scriptname [-psbuhS] [-J PROXY_HOSTNAME[:PORT]] [-P PORT] [-t THREADS] [-l SERVERLIST] -c COMMAND
-
-    -b      Brief mode: only show the first line of output to stdout,
+    
+    -b      Brief mode: only show the first line of output to stdout, 
             but save full output to log
-
+            
     -c      Command to run on the remote servers
     -h      Show this usage
     -J      Utilize a proxy (Jump) host to connect to the remote servers. Format would be servername[:port]
@@ -70,7 +70,7 @@ $scriptname [-psbuhS] [-J PROXY_HOSTNAME[:PORT]] [-P PORT] [-t THREADS] [-l SERV
     -u      Use a specific username, instead of current logged-in user
     -U      Unattended mode: Do not show output. Only return the final log location
 Swarm Status Explanation:
-Command Status: [Server Hostname] [Active Threads/Thread Spawn Number - Success/Error/Failed count]: Command Stdout
+Command Status: [Server Hostname] [Active Threads/Thread Spawn Number - Success/Error/Failed count]: Command Stdout 
 Example Status:
 ok: [testserver] [3/85 82/5/0]: 09:09:54 up 98 days, 11:48,  0 users,  load average: 0.29, 0.23, 0.14
 ""$end"
@@ -114,7 +114,7 @@ ask () {
             prompt="y/n"
             default=
         fi
-
+        
         # Get user input
         read -p "$1 [$prompt] " REPLY </dev/tty
 
@@ -143,7 +143,7 @@ ping_test() {
 stdout_log() {
 
     # Send ssh cargo to stdout
-
+    
     local job_status=$1
     local job_error=$2
     local job_number=$3
@@ -165,7 +165,7 @@ stdout_log() {
         [[ $error_count == "" ]] && error_count=0
 
         # Get count of active children, subtract 1 to get count of only children
-        local active=$(ps xao ppid | grep -w -c $parent)
+        local active=$(ps xao ppid | grep -w -c $parent) 
         if [[ $active -gt 1 ]]
         then
             ((active--))
@@ -204,8 +204,8 @@ stdout_log() {
                 # echo with yellow if job error'd
                 echo -n -e "\e[93m""$job_status: [$job_server] [$active/$job_number $success_count/$error_count/$fail_count]: $job_error ""\e[0m"; echo "$job_cargo"
             fi
-
-        fi
+                
+        fi 
     fi
 }
 
@@ -233,7 +233,7 @@ ssh_command() {
     local cargo=
     ping_rc=$(ping_test $job_server)
     if [[ $ping_rc == 0 ]]
-    then
+    then 
         if [[ $askpass == "true" ]] || [[ $usesudo == "true" ]]
         then
             if [[ $usesudo == "true" ]]
@@ -281,29 +281,29 @@ ssh_command() {
         if [[ -e $tmpdir ]]
         then
             case $ssh_rc in
-                0) status=ok;      error=SUCCESS;           echo $job_server >> $success;;
-                1) status=fail;    error=FAILED;            echo $job_server >> $failed;;
+                0) status=ok;      error=SUCCESS;           echo $job_server >> $success;; 
+                1) status=fail;    error=FAILED;            echo $job_server >> $failed;; 
                 300) status=error; error=FAILED-SCP;        echo $job_server >> $failed;;
-                255) status=error; error=FAILED-SSH;        echo $job_server >> $errors;;
+                255) status=error; error=FAILED-SSH;        echo $job_server >> $errors;; 
                 *) status=error;   error="failed($ssh_rc)"; echo $job_server >> $failed;;
             esac
         fi
     else
         if [[ -e $tmpdir ]]
         then
-            case $ping_rc in
+            case $ping_rc in 
                 1) status=error; error=UNPINGABLE;              echo $job_server >> $errors;;
                 2) status=error; error=FAILED-DNS;              echo $job_server >> $errors;;
                 *) status=error; error="FAILED-PING($ping_rc)"; echo $job_server >> $errors;;
-            esac
+            esac 
         fi
     fi
 
     # Send the ssh results to stdout
-    stdout_log "$status" "$error" "$job_number" "$job_server" "$cargo"
+    stdout_log "$status" "$error" "$job_number" "$job_server" "$cargo" 
 
     # Send the ssh results to the log
-    store_results $status $error $job_number $job_server "$cargo"
+    store_results $status $error $job_number $job_server "$cargo" 
 
     if [[ $job_number == 0 ]]; then
         ((count++))
@@ -311,7 +311,7 @@ ssh_command() {
 }
 
 rsync_data() {
-
+    
     # Place holder in case we eventually want to send scripts to execute
 
     echo rsyncing data now
@@ -350,8 +350,8 @@ spawn_seeds() {
             fi
         fi
     done
-    touch $tmpdir/seeds_complete
-}
+    touch $tmpdir/seeds_complete 
+} 
 
 first_seed() {
 
@@ -379,7 +379,7 @@ first_seed() {
             kill_script
         fi
     else
-        kill_script
+        kill_script 
     fi
 }
 
@@ -430,7 +430,7 @@ while getopts "c:t:l:r:pP:sbhSJ:u:U" opt; do
 	    if [[ $serverlist == "all" ]]; then
             serverlist=~/hosts
 	    fi
-
+            
             ;;
         r)
             rsync_file=$OPTARG
@@ -475,7 +475,7 @@ do
     then
         echo "Could not find required $program, exiting"
         exit 1
-    fi
+    fi 
 done
 
 if [[ -z $command ]]
@@ -504,7 +504,7 @@ then
     clean_up 1
 fi
 
-if [[ -n $sshport ]]
+if [[ -n $sshport ]] 
 then
     if ! [ "$sshport" -eq "$sshport" ] 2>/dev/null
     then
@@ -634,7 +634,7 @@ fi
 
 
 if [[ $mode != "unattended" ]]; then
-    first_seed
+    first_seed 
 else
     spawn_seeds
 fi
@@ -652,4 +652,4 @@ else
     echo
     echo -e "$yellow" $logfile "$end"
 fi
-clean_up
+clean_up 
