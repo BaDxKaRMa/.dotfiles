@@ -24,8 +24,6 @@ add_to_path "/opt/homebrew/sbin"
 
 add_to_fpath "${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src"
 
-# Added by gdevtool installer
-source "gdevtool-plugin-init"
 
 # plugins for oh-my-zsh
 plugins=(

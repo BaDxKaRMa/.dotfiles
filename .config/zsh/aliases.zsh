@@ -55,7 +55,7 @@ alias pipupdateall='pip3 list -o | grep -v -i warning | cut -f1 -d" " | tr " " "
 alias mkpython='cookiecutter https://github.com/badxkarma/python-bootstrap.git'
 
 # Check if the gh copilot extension is installed and load aliases accordingly
-if gh extension list | grep -q 'github/gh-copilot'; then
+if command -v gh >/dev/null 2>&1 && gh extension list 2>/dev/null | grep -q 'github/gh-copilot'; then
   copilot_shell_suggest() {
     gh copilot suggest -t shell "$@"
   }
