@@ -51,5 +51,3 @@ extract() {
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# Added by gdevtool installer
-source "gdevtool-plugin-init"
