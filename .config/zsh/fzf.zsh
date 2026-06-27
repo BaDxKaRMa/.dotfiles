@@ -24,7 +24,7 @@ export FZF_DEFAULT_OPTS="
 --bind '?:toggle-preview'
 --bind ctrl-a:select-all+accept
 --preview-window 'right:60%'
---preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
+--preview '([[ -f {} ]] && (${BAT_CMD:-bat} --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
 "
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_R_OPTS='-i -e --cycle --height 50% --border --layout=reverse --preview='''

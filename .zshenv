@@ -34,8 +34,17 @@ export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --no-ignore'
 export FZF_COMPLETION_TRIGGER='**'
 
 # Terminal and tool configs
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export BAT_THEME='ansi'
+# Debian/Ubuntu ship bat as `batcat`; resolve once so MANPAGER/fzf preview work
+# on both macOS and Linux. BAT_CMD is reused by fzf.zsh.
+if command -v bat >/dev/null 2>&1; then
+  export BAT_CMD=bat
+elif command -v batcat >/dev/null 2>&1; then
+  export BAT_CMD=batcat
+fi
+if [[ -n "$BAT_CMD" ]]; then
+  export MANPAGER="sh -c 'col -bx | ${BAT_CMD} -l man -p'"
+  export BAT_THEME='ansi'
+fi
 export HOMEBREW_NO_ENV_HINTS=True
 export GPG_TTY=$TTY
 export ZSH_THEME="powerlevel10k/powerlevel10k"

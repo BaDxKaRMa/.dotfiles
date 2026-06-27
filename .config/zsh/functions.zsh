@@ -55,9 +55,20 @@ function readfile {
 }
 
 function myip {
-  local ip=$(ifconfig | grep 'inet 10' | cut -f 2 -d ' ')
-  echo $ip | pbcopy
-  echo $ip
+  local ip
+  if [[ "$OSTYPE" == darwin* ]]; then
+    ip=$(ifconfig | awk '/inet 10\./{print $2}' | head -1)
+  else
+    ip=$(ip -4 -o addr show 2>/dev/null | awk '/ 10\./{print $4}' | cut -d/ -f1 | head -1)
+  fi
+  print -r -- "$ip"
+  if command -v pbcopy >/dev/null 2>&1; then
+    print -rn -- "$ip" | pbcopy
+  elif command -v xclip >/dev/null 2>&1; then
+    print -rn -- "$ip" | xclip -selection clipboard
+  elif command -v wl-copy >/dev/null 2>&1; then
+    print -rn -- "$ip" | wl-copy
+  fi
 }
 
 function rec {
@@ -69,10 +80,12 @@ function rec {
 }
 
 function makegif {
+  local font_dir="$HOME/Library/Fonts/"
+  [[ "$OSTYPE" == darwin* ]] || font_dir="$HOME/.local/share/fonts/"
   if test -z "$argv"; then
-    agg --font-dir=~/Library/Fonts/ --font-family "MonaspiceKr NFM" ~/logs/casts/$(ls ~/logs/casts/ | fzf -q ".cast ") ~/logs/gifs/latest.gif
+    agg --font-dir="$font_dir" --font-family "MonaspiceKr NFM" ~/logs/casts/$(ls ~/logs/casts/ | fzf -q ".cast ") ~/logs/gifs/latest.gif
   else
-    agg --font-dir=~/Library/Fonts/ --font-family "MonaspiceKr NFM" ~/logs/casts/$(ls ~/logs/casts/ | fzf -q ".cast ") ~/logs/gifs/$argv.gif
+    agg --font-dir="$font_dir" --font-family "MonaspiceKr NFM" ~/logs/casts/$(ls ~/logs/casts/ | fzf -q ".cast ") ~/logs/gifs/$argv.gif
   fi
 }
 
@@ -113,7 +126,7 @@ function docker-set-env {
   export DOCKER_TLS_VERIFY="0"
   export DOCKER_HOST="ssh://photon"
   export DOCKER_MACHINE_NAME="photon"
-  export DOCKER_CERT_PATH="/Users/karma/.docker/machine/certs"
+  export DOCKER_CERT_PATH="$HOME/.docker/machine/certs"
 }
 
 function docker-clear-env {

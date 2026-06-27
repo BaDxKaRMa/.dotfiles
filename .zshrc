@@ -19,8 +19,8 @@ if command -v brew >/dev/null; then
 fi
 
 add_to_path "$HOME/bin"
-add_to_path "/opt/homebrew/opt/node@16/bin"
-add_to_path "/opt/homebrew/sbin"
+add_to_path "${BREW_PREFIX:-/opt/homebrew}/opt/node@16/bin"
+add_to_path "${BREW_PREFIX:-/opt/homebrew}/sbin"
 
 add_to_fpath "${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src"
 
@@ -60,12 +60,3 @@ zsh-defer '[ -f /opt/homebrew/bin/vault ] && complete -o nospace -C /opt/homebre
 
 
 zsh-defer '[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh'
-export REQUESTS_CA_BUNDLE=/Users/REDACTED/.zscaler/certs.pem
-export SSL_CERT_FILE=/Users/REDACTED/.zscaler/certs.pem
-export NODE_EXTRA_CA_CERTS=/Users/REDACTED/.zscaler/certs.pem
-export CURL_CA_BUNDLE=/Users/REDACTED/.zscaler/certs.pem
-export ca_certificate=/Users/REDACTED/.zscaler/certs.pem
-export AWS_CA_BUNDLE=/Users/REDACTED/.zscaler/certs.pem
-
-# Added by Windsurf
-export PATH="/Users/REDACTED/.codeium/windsurf/bin:$PATH"

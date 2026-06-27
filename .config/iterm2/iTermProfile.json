@@ -342,7 +342,7 @@
       "Text": "f"
     }
   },
-  "Log Directory": "/Users/REDACTED/logs/terminal",
+  "Log Directory": "~/logs/terminal",
   "Ansi 14 Color": {
     "Red Component": 0.40000003576278687,
     "Color Space": "sRGB",
