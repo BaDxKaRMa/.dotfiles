@@ -11,7 +11,18 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source "$HOME/.config/zsh/functions.zsh"
+# Idempotent PATH/FPATH helpers, defined inline so they exist before oh-my-zsh
+# loads (the rest of my functions come from functions.zsh, sourced once by omz).
+add_to_fpath() {
+  for dir; do
+    [[ -d "$dir" ]] && [[ ":${(j.:.)fpath}:" != *":$dir:"* ]] && fpath=("$dir" $fpath)
+  done
+}
+add_to_path() {
+  for dir; do
+    [[ -d "$dir" ]] && [[ ":$PATH:" != *":$dir:"* ]] && path=("$dir" $path)
+  done
+}
 
 if command -v brew >/dev/null; then
   BREW_PREFIX=${BREW_PREFIX:-$(brew --prefix)}
@@ -32,9 +43,9 @@ plugins=(
   sublime
   zsh-completions
   fzf
-  history-substring-search
   zsh-autosuggestions
   zsh-syntax-highlighting
+  history-substring-search
 )
 
 source "$ZSH/oh-my-zsh.sh"

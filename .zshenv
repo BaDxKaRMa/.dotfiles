@@ -15,23 +15,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 # Editor preference
 export EDITOR='vim'
 
-# FZF configurations
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --no-ignore'
-export FZF_DEFAULT_OPTS="
--i
---ansi
---multi
---exact
---layout=reverse
---bind '?:toggle-preview'
---bind ctrl-a:select-all+accept
---preview-window 'right:60%'
---preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
-"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_CTRL_R_OPTS='-i -e --cycle --height 50% --border --layout=reverse --preview='
-export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --no-ignore'
-export FZF_COMPLETION_TRIGGER='**'
+# FZF env lives in ~/.config/zsh/fzf.zsh (single source of truth, sourced by omz).
 
 # Terminal and tool configs
 # Debian/Ubuntu ship bat as `batcat`; resolve once so MANPAGER/fzf preview work

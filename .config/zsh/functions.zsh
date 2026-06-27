@@ -1,21 +1,5 @@
-# functions for pathing
-# FPATH function
-function add_to_fpath() {
-  for dir; do
-    if [[ -d "$dir" ]] && [[ ":${fpath[*]}:" != *":$dir:"* ]]; then
-      fpath=("$dir" $fpath)
-    fi
-  done
-}
-
-# PATH function
-function add_to_path() {
-  for dir; do
-    if [[ -d "$dir" ]] && [[ ":${path[*]}:" != *":$dir:"* ]]; then
-      path=("$dir" $path)
-    fi
-  done
-}
+# Note: add_to_path / add_to_fpath are defined inline in ~/.zshrc because they
+# are needed before oh-my-zsh loads. This file is auto-sourced once by omz.
 
 function fssh { # Fuzzy-find ssh host via ag and ssh into it
   ssh $(ag --ignore-case '^host [^*]' ~/.ssh/config | cut -d ' ' -f 2 | fzf --preview='' --prompt='SSH To > ' --height=20 --border)
@@ -103,18 +87,6 @@ function slog {
 
 function compare {
   cmp --silent $1 $2 && echo '### SUCCESS: Files Are Identical! ###' || echo '### WARNING: Files Are Different! ###'
-}
-
-function quser {
-  dscl "/Active Directory/lab.local/All Domains/" -read /Users/$argv RecordName RealName JobTitle dsAttrTypeNative:ou EMailAddress | sed 's/dsAttrTypeNative:ou:/Department/g' | sed 's/EMailAddress:/EMailAddress:\n/g' | sed 's/RecordName:/RecordName:\n/g'
-}
-
-function qemail {
-  dscl "/Active Directory/lab.local/All Domains/" -search /Users EMailAddress "$argv" | awk '{ print $1 }' | sed 's/[")]//g' | xargs
-}
-
-function qgroups {
-  dscl "/Active Directory/lab.local/All Domains/" -read /Users/$argv dsAttrTypeNative:memberOf
 }
 
 function git-list-config {
