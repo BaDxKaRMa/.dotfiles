@@ -1,90 +1,305 @@
 tap "badxkarma/badxkarma"
-tap "crowdstrike/foundry-cli"
 tap "fsouza/prettierd"
-tap "hashicorp/tap"
-tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "snyk/tap"
-brew "asciinema"
-brew "aws-sso-cli"
-brew "awscli"
-brew "bat"
-brew "bat-extras"
-brew "cmake"
-brew "cmake-docs"
-brew "cmatrix"
-brew "cookiecutter"
-brew "diff-so-fancy"
-brew "eslint"
-brew "fd"
-brew "ffmpeg"
-brew "fortune"
-brew "fzf"
-brew "gh"
-brew "gifsicle"
-brew "git"
-brew "glow"
-brew "gnupg"
-brew "grepcidr"
-brew "htop"
-brew "inetutils"
-brew "iperf"
-brew "jq"
-brew "lolcat"
-brew "lsd"
-brew "luarocks"
-brew "mdcat"
-brew "mtr"
-brew "neofetch"
-brew "neovim"
-brew "nmap"
-brew "node@16"
-brew "node@18"
-brew "pinentry-mac"
-brew "pipx"
-brew "poetry"
-brew "prettier"
-brew "pyenv"
-brew "ripgrep"
-brew "rust"
-brew "sevenzip"
-brew "speedtest-cli"
-brew "stylua"
-brew "terminal-notifier"
-brew "tfenv"
-brew "the_silver_searcher"
-brew "tldr"
-brew "tmux"
+tap "gromgit/fuse"
+# Search tool like grep, but optimized for programmers
+brew "ack"
+# Run your GitHub Actions locally
+brew "act"
+# Next-generation aircrack with lots of new features
+brew "aircrack-ng"
+# Display directories as trees (with optional color/HTML output)
 brew "tree"
-brew "vault"
+# Automate deployment, configuration, and upgrading
+brew "ansible"
+# Record and share terminal sessions
+brew "asciinema"
+# Securely manage AWS API credentials using AWS SSO
+brew "aws-sso-cli"
+# Securely store and access AWS credentials in development environments
+brew "aws-vault"
+# Official Amazon AWS command-line interface
+brew "awscli"
+# Terminal bandwidth utilization tool
+brew "bandwhich"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Bash scripts that integrate bat with various command-line tools
+brew "bat-extras"
+# Library for USB device access
+brew "libusb"
+# Swiss army knife for network attacks and monitoring
+brew "bettercap"
+# Tool to obtain certs from Let's Encrypt and autoenable HTTPS
+brew "certbot"
+# CLI tool for Cloudflare Workers
+brew "cloudflare-wrangler"
+# Cross-platform make
+brew "cmake"
+# Console Matrix
+brew "cmatrix"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Good-lookin' diffs with diff-highlight and more
+brew "diff-so-fancy"
+# Isolated development environments using Docker
+brew "docker-compose"
+# Create Docker hosts locally and on cloud providers
+brew "docker-machine"
+# Convert text between DOS, UNIX, and Mac formats
+brew "dos2unix"
+# Utilities for the ext2, ext3, and ext4 file systems
+brew "e2fsprogs"
+# Perl lib for reading and writing EXIF metadata
+brew "exiftool"
+# Database of public exploits and corresponding vulnerable software
+brew "exploitdb"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# Infamous electronic fortune-cookie generator
+brew "fortune"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GNU compiler collection
+brew "gcc"
+# GitHub command-line tool
+brew "gh"
+# GIF image/animation creator/editor
+brew "gifsicle"
+# Distributed revision control system
+brew "git"
+# Render markdown on the CLI
+brew "glow"
+# GNU Privacy Guard (OpenPGP)
+brew "gnupg"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Directory/file & DNS busting tool written in Go
+brew "gobuster"
+# Filter IP addresses matching IPv4 CIDR/network specification
+brew "grepcidr"
+# World's fastest and most advanced password recovery utility
+brew "hashcat"
+# Utils for conversion of cap/pcap/pcapng WiFi dump files
+brew "hcxtools"
+# Improved top (interactive process viewer)
+brew "htop"
+# Configurable static site generator
+brew "hugo"
+# Network logon cracker which supports many services
+brew "hydra"
+# Tools and libraries to manipulate images in select formats
+brew "imagemagick"
+# GNU utilities for networking
+brew "inetutils"
+# Tool to measure maximum TCP and UDP bandwidth
+brew "iperf"
+# Enhanced version of john, a UNIX password cracker
+brew "john-jumbo"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Next-gen compiler infrastructure
+brew "llvm"
+# Next-gen compiler infrastructure
+brew "llvm@17"
+# Rainbows and unicorns in your console!
+brew "lolcat"
+# Clone of ls with colorful output, file type icons, and more
+brew "lsd"
+# Language Server for the Lua language
+brew "lua-language-server"
+# Package manager for the Lua programming language
+brew "luarocks"
+# Utility for directing compilation
+brew "make"
+# TCP port scanner, scans entire Internet in under 5 minutes
+brew "masscan"
+# Show markdown documents on text terminals
+brew "mdcat"
+# Like sed, awk, cut, join & sort for name-indexed data such as CSV
+brew "miller"
+# 'traceroute' and 'ping' in a single tool
+brew "mtr"
+# Fast, highly customisable system info script
+brew "neofetch"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Web server scanner
+brew "nikto"
+# Port scanning utility for large networks
+brew "nmap"
+# Create, run, and share large language models (LLMs)
+brew "ollama"
+# SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
+brew "openvpn"
+# 7-Zip (high compression file archiver) implementation
+brew "p7zip"
+# Pretty system information tool written in POSIX sh
+brew "pfetch"
+# Tool for interacting with RP2040/RP2350 devices and binaries
+brew "picotool"
+# Pinentry for GPG on Mac
+brew "pinentry-mac"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
+# Python package management tool
+brew "poetry"
+# Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
+brew "prettier"
+# Password generator
+brew "pwgen"
+# Netcat with FW/IDS/IPS evasion, self-inject-, bind- and reverse shell
+brew "pwncat"
+# Static type checker for Python
+brew "pyright"
+# Implements brute force attack to recover WPA/WPA2 passkeys
+brew "reaver"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Utility that provides fast incremental file transfer
+brew "rsync"
+# Powerful, clean, object-oriented scripting language
+brew "ruby", link: false
+# Extremely fast Python linter, written in Rust
+brew "ruff"
+# Safe, concurrent, practical language
+brew "rust"
+# SMB/CIFS file, print, and login server for UNIX
+brew "samba"
+# 7-Zip is a file archiver with a high compression ratio
+brew "sevenzip"
+# Python library and command-line utility for Shodan
+brew "shodan"
+# SOcket CAT: netcat on steroids
+brew "socat"
+# Command-line interface for https://speedtest.net bandwidth tests
+brew "speedtest-cli"
+# Penetration testing for SQL injection and database servers
+brew "sqlmap"
+# SSL tunneling program
+brew "stunnel"
+# Opinionated Lua code formatter
+brew "stylua"
+# Send macOS User Notifications from the command-line
+brew "terminal-notifier"
+# Code-search similar to ack
+brew "the_silver_searcher"
+# Simplified and community-driven man pages
+brew "tldr"
+# Terminal multiplexer
+brew "tmux"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Vi 'workalike' with many additional features
 brew "vim"
+# Tool for creating isolated virtual python environments
 brew "virtualenv"
-brew "virtualenvwrapper"
+# Command-line interface for VirusTotal
 brew "virustotal-cli"
+# Internet file retriever
 brew "wget"
+# Tools for the WireGuard secure network tunnel
+brew "wireguard-tools"
+# Network analyzer and capture tool - without graphical user interface
+brew "wireshark", link: false
+# Passive hostname, domain, and IP lookup tool
+brew "wtfis"
+# JavaScript package manager
+brew "yarn"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
+# Tracks most-used directories to make cd smarter
 brew "z"
+# General-purpose lossless data-compression library
+brew "zlib"
+# UNIX shell (command interpreter)
 brew "zsh"
-brew "badxkarma/badxkarma/pokemonsay"
-brew "crowdstrike/foundry-cli/foundry"
-brew "fsouza/prettierd/prettierd"
-brew "snyk/tap/snyk"
+# "pokemonsay" is like "cowsay" but for pokémon.
+brew "badxkarma/badxkarma/pokemonsay", trusted: true
+# prettier, on SPEED!
+brew "fsouza/prettierd/prettierd", trusted: true
+# Read-only implementation of ext4 for FUSE
+brew "gromgit/fuse/ext4fuse-mac", trusted: true
+# Read-write NTFS driver for FUSE
+brew "gromgit/fuse/ntfs-3g-mac", trusted: true
+# Password manager that keeps all passwords secure behind one password
+cask "1password"
+# Command-line interface for 1Password
 cask "1password-cli"
-cask "audacity"
-cask "aws-vault"
+# Web browser focusing on privacy
+cask "brave-browser"
+# Web security testing toolkit
 cask "burp-suite"
+# Free and open-source web browser
+cask "chromium"
+# Terminal-based AI coding assistant
+cask "claude-code"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
+# Clipboard manager with advanced features
 cask "copyq"
-cask "font-hack-nerd-font"
-cask "font-monaspace-nerd-font"
-cask "gpg-suite-no-mail"
+# Voice and text chat software
+cask "discord"
+# App to build and share containerised applications and microservices
+cask "docker-desktop"
+# Web browser
+cask "firefox@developer-edition"
+# Software reverse engineering (SRE) suite of tools
+cask "ghidra"
+# Free and open-source image editor
+cask "gimp"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
+# Menu bar calendar
+cask "itsycal"
+# Open-source screen recorder built with web technology
+cask "kap"
+# File archiver
 cask "keka"
+# Open-source keystroke visualiser
+cask "keycastr"
+# Clipboard manager
+cask "maccy"
+# File system integration
+cask "macfuse"
+# Penetration testing framework
+cask "metasploit"
+# Multi-platform web browser
+cask "microsoft-edge"
+# Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Collaboration platform for API development
 cask "postman"
-cask "powershell"
+# IDE for Python programming - Community Edition
 cask "pycharm-ce"
+# Control your tools with a few keystrokes
+cask "raycast"
+# Screenshot measurement and annotation tool
+cask "shottr"
+# System monitor for the menu bar
+cask "stats"
+# Windows manager
+cask "stay"
+# Text editor for code, markup and prose
 cask "sublime-text"
-cask "todoist"
-cask "wireshark"
+# JDK from the Eclipse Foundation (Adoptium)
+cask "temurin"
+# Menu bar manager
+cask "thaw"
+# Open-source BitTorrent client
+cask "transmission"
+# Network protocol analyzer
+cask "wireshark-app"
+# Open-source version of the X.Org X Window System
+cask "xquartz"
+cargo "rainbowtable"
+npm "@github/copilot"
+npm "copilot-money-mcp"
 vscode "enkia.tokyo-night"
 vscode "esbenp.prettier-vscode"
 vscode "github.copilot"
